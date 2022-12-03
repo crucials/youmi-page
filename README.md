@@ -1,4 +1,4 @@
-YouMi landing page
+# YouMi landing page
 
 Website with smooth animations, sliders and accordion. Built with webpack, SCSS, TypeScript and [Splide](https://splidejs.com/) library :green_book:
 
