@@ -1,0 +1,174 @@
+@use '../utils/colors' as *;
+@use '../utils/ui-kit' as *;
+
+.steps {
+    padding-top: 100px;
+    padding-bottom: 125px;
+    background-color: #F9FCFF;
+}
+
+.steps-section-heading {
+    margin-bottom: 80px;
+}
+
+.step {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 135px;
+}
+
+.step-content {
+    width: 42%;
+    min-width: 300px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.step-number {
+    position: relative;
+}
+
+.bubble {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 30%;
+    z-index: 0;
+}
+
+.number {
+    width: 50px;
+    height: 100px;
+    position: relative;
+    z-index: 1;
+}
+
+.step-info {
+    position: relative;
+    width: 78%;
+}
+
+.step-title {
+    font-weight: 600;
+    color: $soft-black;
+    margin-bottom: 5px;
+    @extend %headline-1;
+}
+
+.step-description {
+    font-weight: normal;
+    color: $soft-black;
+    @extend %headline-2;
+}
+
+.step-picture {
+    width: 41%;
+    min-width: 300px;
+    opacity: 0;
+    transition: opacity 1s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+.step-picture-viewed {
+    opacity: 1;
+}
+
+.profile {
+    transform-origin: center;
+    transition: scale 0.3s ease-out;
+    scale: 0;
+}
+
+.profile-viewed {
+    scale: 1;
+}
+
+.make-first-step {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    column-gap: 20px;
+    row-gap: 40px;
+}
+
+.notification-note {
+    width: 36%;
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.calendar {
+    position: relative;
+
+    .bubble {
+        width: 100%;
+        right: 0px;
+    }
+}
+
+.calendar-icon {
+    position: relative;
+    z-index: 1;
+}
+
+.note-text {
+    position: relative;
+    font-weight: normal;
+    color: $soft-black;
+    @extend %headline-2;
+}
+
+@media (max-width: 800px) {
+    .make-first-step {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .notification-note {
+        width: 100%;
+    }
+}
+
+@media (max-width: 680px) {
+    .step {
+        flex-direction: column;
+        row-gap: 50px;
+    }
+
+    .step-content, .step-picture {
+        width: 100%;
+    }
+
+    .step-picture {
+        max-width: 460px;
+    }
+}
+
+@media (max-width: 360px) {
+    .step-content {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 30px;
+    }
+
+    .step-picture {
+        display: none;
+    }
+    
+    .step-info {
+        text-align: center;
+    }
+
+    .number {
+        width: 25px;
+        height: 50px;
+    }
+
+    .bubble {
+        width: 60px;
+        height: 60px;
+        left: -15px;
+    }
+}

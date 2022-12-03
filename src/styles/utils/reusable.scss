@@ -1,0 +1,35 @@
+@use 'colors' as *;
+@use 'ui-kit' as *;
+
+.content-wrapper {
+    width: 78%;
+    margin: 0 auto;
+}
+
+@media (max-width: 1150px) {
+    .content-wrapper {
+        width: 95%;
+    }
+}
+
+.section-heading {
+    color: $purple;
+    font-weight: 800;
+    text-align: center;
+    @extend %title-2;
+}
+
+.section-subheading {
+    color: $soft-black;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 10px;
+    @extend %headline-1;
+}
+
+.section-description {
+    font-weight: normal;
+    line-height: max(28px, 1.75vw);
+    color: $soft-black;
+    @extend %headline-2;
+}

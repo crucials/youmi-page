@@ -1,0 +1,27 @@
+@use 'styles/normalize';
+@use 'styles/utils/fonts';
+
+@use 'styles/utils/reusable.scss';
+
+@use 'styles/header';
+@use 'styles/navigation';
+
+@use 'styles/sections/features-section';
+@use 'styles/sections/problems';
+@use 'styles/sections/qualification';
+@use 'styles/sections/steps';
+@use 'styles/sections/questions';
+@use 'styles/sections/mobile-app';
+@use 'styles/sections/help';
+
+@use 'styles/footer';
+
+* {
+    font-family: 'Montserrat';
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+    }
+}

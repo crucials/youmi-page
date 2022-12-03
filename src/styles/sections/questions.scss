@@ -1,0 +1,92 @@
+@use '../utils/colors' as *;
+@use '../utils/ui-kit' as *;
+
+.questions {
+    padding: 112px 0;
+}
+
+.questions-section-heading {
+    margin-bottom: 60px;
+}
+
+.question {
+    border-radius: 25px;
+    background-color: $light-blue;
+    padding: 36px 90px;
+    margin-bottom: 25px;
+
+    &:last-child {
+        margin-bottom: 0px;
+    }
+}
+
+.question-text {
+    display: flex;
+    justify-content: space-between;
+    line-height: max(28px, 1.75vw);
+    column-gap: 15px;
+    align-items: center;
+    font-weight: 600;
+    @extend %headline-2;
+    transition: margin-bottom 0.3s linear;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.answer {
+    font-weight: normal;
+    line-height: 25px;
+    max-height: 0px;
+    transition: max-height 0.4s ease;
+    overflow: hidden;
+    @extend %subtitle-2;
+}
+
+.plus-vector-part {
+    transform: scaleY(1);
+    transform-origin: center;
+    transition: transform 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.question[data-revealed] {
+    .question-text {
+        margin-bottom: 9px;
+    }
+
+    .answer {
+        transition-duration: 1s;
+        max-height: 100vh;
+    }
+
+    .plus-vector-part {
+        transform: scaleY(0);
+    }
+}
+
+.more-questions-button {
+    margin: 0 auto;
+    display: none;
+}
+
+
+@media (max-width: 600px) {
+    .question {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 360px) {
+    .question:nth-child(3), .question:nth-child(n+5) {
+        display: none;
+    }
+
+    .accordion {
+        margin-bottom: 40px;
+    }
+
+    .more-questions-button {
+        display: block;
+    }
+}
